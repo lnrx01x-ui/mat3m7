@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta id="theme-color" name="theme-color" content="#f2f2f7" />
+    <meta name="description" content="كبابجي العربي - الأكل الشرقي على أصوله" />
+    <title>كبابجي العربي</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+        <main>
+            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="تفعيل الوضع الداكن">
+                🌙 الوضع الداكن
+            </button>
+            <button id="cart-toggle" class="cart-toggle" type="button" aria-controls="cart-modal" aria-expanded="false">
+                🛒 السلة <span id="cart-count">0</span>
+            </button>
+            <h1>كبابجي العربي</h1>
+            <p>الأكل الشرقي على أصوله</p>
+            <button id="menu-toggle" type="button" aria-controls="menu" aria-expanded="false">
+                استعرض القائمة
+            </button>
+            <section id="menu" class="menu" aria-labelledby="menu-title" hidden>
+                <h2 id="menu-title">قائمة الطعام</h2>
+                <p id="menu-status" class="menu-status" role="status">جاري تحميل القائمة...</p>
+                <div class="menu-sections" id="menu-sections"></div>
+            </section>
+        </main>
+        <div class="order-modal" id="order-modal" hidden>
+            <div class="modal-backdrop" data-close-modal></div>
+            <section class="order-sheet" role="dialog" aria-modal="true" aria-labelledby="order-title">
+                <button class="close-modal" type="button" aria-label="إغلاق" data-close-modal>×</button>
+                <p class="eyebrow">تفاصيل الطلب</p>
+                <h2 id="order-title">اسم الصنف</h2>
+                <form id="order-form">
+                    <fieldset id="size-fieldset">
+                        <legend>اختر النوع</legend>
+                    </fieldset>
+                    <label class="quantity-label" for="quantity">الكمية</label>
+                    <input id="quantity" name="quantity" type="number" min="1" max="20" value="1" required />
+                    <div class="order-total">
+                        <span>الإجمالي</span>
+                        <strong id="order-total">0 ج.م</strong>
+                    </div>
+                    <button class="confirm-order" type="submit">تأكيد الطلب</button>
+                </form>
+                <p class="order-message" id="order-message" role="status"></p>
+            </section>
+        </div>
+        <div class="order-modal" id="cart-modal" hidden>
+            <div class="modal-backdrop" data-close-cart></div>
+            <section class="order-sheet cart-sheet" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+                <button class="close-modal" type="button" aria-label="إغلاق السلة" data-close-cart>×</button>
+                <p class="eyebrow">مراجعة الطلب</p>
+                <h2 id="cart-title">سلة الطلبات</h2>
+                <div id="cart-items" class="cart-items"></div>
+                <div class="order-total">
+                    <span>الإجمالي</span>
+                    <strong id="cart-total">0 ج.م</strong>
+                </div>
+                <div class="cart-actions">
+                    <button id="continue-shopping" class="secondary-action" type="button">أكمل التسوق</button>
+                    <button id="checkout-button" class="confirm-order" type="button" disabled>إتمام الطلب</button>
+                </div>
+            </section>
+        </div>
+        <div class="order-modal" id="checkout-modal" hidden>
+            <div class="modal-backdrop" data-close-checkout></div>
+            <section class="order-sheet" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+                <button class="close-modal" type="button" aria-label="إغلاق" data-close-checkout>×</button>
+                <p class="eyebrow">بيانات التوصيل</p>
+                <h2 id="checkout-title">إتمام الطلب</h2>
+                <form id="checkout-form">
+                    <label class="form-field" for="customer-name">الاسم</label>
+                    <input id="customer-name" name="name" type="text" autocomplete="name" required />
+                    <label class="form-field" for="customer-phone">رقم الهاتف</label>
+                    <input id="customer-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required />
+                    <label class="form-field" for="customer-address">العنوان</label>
+                    <textarea id="customer-address" name="address" rows="3" autocomplete="street-address" required></textarea>
+                    <label class="form-field" for="customer-notes">ملاحظات (اختياري)</label>
+                    <textarea id="customer-notes" name="notes" rows="2"></textarea>
+                    <label class="form-field" for="payment-method">طريقة الدفع</label>
+                    <select id="payment-method" name="paymentMethod">
+                        <option value="cash">الدفع نقدًا عند الاستلام</option>
+                        <option value="transfer">تحويل بنكي</option>
+                    </select>
+                    <button class="confirm-order" type="submit">تأكيد وإرسال الطلب</button>
+                </form>
+                <p class="order-message" id="checkout-message" role="status"></p>
+            </section>
+        </div>
+    </body>
+</html>
