@@ -71,7 +71,7 @@
         document.documentElement.dataset.theme = theme;
         themeToggle.textContent = isDark ? "☀️ الوضع الفاتح" : "🌙 الوضع الداكن";
         if (themeColorMeta instanceof HTMLMetaElement) {
-            themeColorMeta.content = isDark ? "#000000" : "#f2f2f7";
+            themeColorMeta.content = isDark ? "#17120d" : "#fbf1e4";
         }
         themeToggle.setAttribute(
             "aria-label",
