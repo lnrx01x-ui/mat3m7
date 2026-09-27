@@ -1,35 +1,39 @@
 :root {
     color-scheme: light;
-    --background-color: #f2f2f7;
-    --surface-color: rgb(255 255 255 / 86%);
-    --surface-solid-color: #fff;
-    --text-color: #1c1c1e;
-    --muted-text-color: #8e8e93;
-    --border-color: rgb(60 60 67 / 18%);
-    --separator-color: rgb(60 60 67 / 12%);
-    --primary-color: #007aff;
-    --accent-color: #ff9500;
-    --accent-hover-color: #e68600;
-    --shadow-color: rgb(0 0 0 / 10%);
+    --background-color: #fbf1e4;
+    --surface-color: rgb(255 250 240 / 88%);
+    --surface-solid-color: #fffbf3;
+    --text-color: #2a1d13;
+    --muted-text-color: #8a7660;
+    --border-color: rgb(94 62 34 / 18%);
+    --separator-color: rgb(94 62 34 / 12%);
+    --primary-color: #c1391b;
+    --accent-color: #d98a2b;
+    --accent-hover-color: #b8741e;
+    --shadow-color: rgb(60 30 10 / 12%);
 }
 
 :root[data-theme="dark"] {
     color-scheme: dark;
-    --background-color: #000;
-    --surface-color: rgb(28 28 30 / 88%);
-    --surface-solid-color: #1c1c1e;
-    --text-color: #f2f2f7;
-    --muted-text-color: #98989d;
-    --border-color: rgb(84 84 88 / 65%);
-    --separator-color: rgb(84 84 88 / 45%);
-    --primary-color: #0a84ff;
-    --accent-color: #ff9f0a;
-    --accent-hover-color: #ffb340;
-    --shadow-color: rgb(0 0 0 / 35%);
+    --background-color: #17120d;
+    --surface-color: rgb(38 30 22 / 88%);
+    --surface-solid-color: #241c15;
+    --text-color: #f5e9d8;
+    --muted-text-color: #b29c82;
+    --border-color: rgb(214 160 100 / 22%);
+    --separator-color: rgb(214 160 100 / 14%);
+    --primary-color: #e85b2c;
+    --accent-color: #f0ae4a;
+    --accent-hover-color: #f5c067;
+    --shadow-color: rgb(0 0 0 / 45%);
 }
 
 * {
     box-sizing: border-box;
+}
+
+h1, h2, h3, h4, .eyebrow {
+    font-family: "Cairo", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
 }
 
 html {
@@ -41,7 +45,7 @@ body {
     min-height: 100vh;
     padding: env(safe-area-inset-top) 1rem env(safe-area-inset-bottom);
     background:
-        radial-gradient(circle at 50% -10%, rgb(0 122 255 / 14%), transparent 38rem),
+        radial-gradient(circle at 50% -10%, rgb(193 57 27 / 14%), transparent 38rem),
         var(--background-color);
     color: var(--text-color);
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
@@ -127,11 +131,11 @@ main > p {
     padding: 0.75rem 1.5rem;
     background: var(--primary-color);
     color: #fff;
-    box-shadow: 0 6px 16px rgb(0 122 255 / 24%);
+    box-shadow: 0 6px 16px rgb(193 57 27 / 24%);
 }
 
 #menu-toggle:hover {
-    background: #006fe6;
+    background: #a83217;
 }
 
 button:active {
@@ -217,7 +221,7 @@ button:focus-visible {
     flex-shrink: 0;
     min-height: 32px;
     padding: 0.35rem 0.75rem;
-    background: rgb(0 122 255 / 12%);
+    background: rgb(193 57 27 / 12%);
     color: var(--primary-color);
     border: 0;
     border-radius: 999px;
@@ -228,7 +232,7 @@ button:focus-visible {
 }
 
 .product-action:hover {
-    background: rgb(0 122 255 / 22%);
+    background: rgb(193 57 27 / 22%);
 }
 
 .product:last-child {
@@ -345,7 +349,7 @@ fieldset label {
 }
 
 fieldset label:has(input:checked) {
-    background: rgb(0 122 255 / 10%);
+    background: rgb(193 57 27 / 10%);
     border-color: var(--primary-color);
 }
 
@@ -398,7 +402,7 @@ fieldset small {
 }
 
 .confirm-order:hover {
-    background: #006fe6;
+    background: #a83217;
 }
 
 .order-message {
